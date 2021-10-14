@@ -1,0 +1,12 @@
+[2021/5/28 20:01:22][INFO][][0] 工作路径已切换到 C:\Users\刘钢\Documents\UiBot\Projects\下载图片&pdf\
+[2021/5/28 20:01:22][INFO][流程块.task][0] 流程 流程块.task 开始运行
+[2021/5/28 20:01:24][ERROR][流程块.task][14] 运行发生错误，流程中止
+错误信息如下：
+流程块.task 第14行：模块 WebBrowserPlugin.UIRobotWebBrowser.Download 调用出错：调用的目标发生了异常。
+download file error: System.UnauthorizedAccessException: 对路径“C:\9e891e13-f54c-4a24-8456-7979d07ce2df”的访问被拒绝。
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   在 System.IO.FileStream..ctor(String path, FileMode mode)
+   在 WebBrowserPlugin.HttpFileDownload.DeownloadFile(String strFileName, String url, notify nt)
+[2021/5/28 20:01:24][INFO][流程块.task][0] 流程块.task 运行已结束

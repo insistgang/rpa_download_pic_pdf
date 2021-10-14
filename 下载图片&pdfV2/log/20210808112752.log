@@ -1,0 +1,8 @@
+[2021/8/8 11:27:52][INFO][][0] 工作路径已切换到 C:\Users\zx\Documents\UiBot\Projects\下载图片&pdf\
+[2021/8/8 11:27:52][INFO][下载图片&pdf.flow][0] 流程 下载图片&pdf.flow 开始运行
+[2021/8/8 11:27:52][INFO][下载图片&pdf.flow][0] 进入流程块“图片下载”
+[2021/8/8 11:28:14][ERROR][流程块2.task][77] 运行发生错误，流程中止
+错误信息如下：
+流程块2.task 第77行：模块 Mouse.MouseAuto.Action 调用出错：调用的目标发生了异常。
+Exception in Mouse.Action,元素未找到
+[2021/8/8 11:28:14][INFO][下载图片&pdf.flow][0] 下载图片&pdf.flow 运行已结束
