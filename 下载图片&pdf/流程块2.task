@@ -1,0 +1,214 @@
+//打开绑定浏览器
+Dim hWeb = ""
+
+Dim iRet = ""
+Dim dTime = ""
+Dim times = ""
+
+Dim i= 0 
+
+hWeb = WebBrowser.Create("chrome","about:blank",30000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200,"sBrowserPath":"","sStartArgs":""})
+hWeb = WebBrowser.BindBrowser("chrome",10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200})
+Dim name1=["总类"]
+Dim name2=["粮油","肉蛋禽","水产品","蔬菜","豆制品","水果"]
+Dim name3=["鲜猪肉","排骨","牛肉","鸡肉","鸡蛋","基围虾","鲫鱼","南瓜","大白菜","黄瓜","紫茄子","西红柿","土豆","长豆角","冬瓜","丝瓜","菠菜","苹果","西瓜","香蕉","橙子"]
+Dim text=["月定基","周环比","同比"]
+Dim web1=["http://localhost:8080/BPI/categ1Index/toVerticCmpDetail?categId=F"]
+Dim web2=["http://localhost:8080/BPI/categ3Index/toVerticCmpDetail?categId=F0101",
+"http://localhost:8080/BPI/categ3Index/toVerticCmpDetail?categId=F0102",
+"http://localhost:8080/BPI/categ3Index/toVerticCmpDetail?categId=F0103",
+"http://localhost:8080/BPI/categ3Index/toVerticCmpDetail?categId=F0104",
+"http://localhost:8080/BPI/categ3Index/toVerticCmpDetail?categId=F0105",
+"http://localhost:8080/BPI/categ3Index/toVerticCmpDetail?categId=F0106"]
+Dim web3=["http://localhost:8080/BPI/categ4Index/toVerticCmpDetail?categId=F010201",
+"http://localhost:8080/BPI/categ4Index/toVerticCmpDetail?categId=F010204",
+"http://localhost:8080/BPI/categ4Index/toVerticCmpDetail?categId=F010202",
+"http://localhost:8080/BPI/categ4Index/toVerticCmpDetail?categId=F010205",
+"http://localhost:8080/BPI/categ4Index/toVerticCmpDetail?categId=F010206",
+"http://localhost:8080/BPI/categ4Index/toVerticCmpDetail?categId=F010301",
+"http://localhost:8080/BPI/categ4Index/toVerticCmpDetail?categId=F010305",
+"http://localhost:8080/BPI/categ4Index/toVerticCmpDetail?categId=F010401",
+"http://localhost:8080/BPI/categ4Index/toVerticCmpDetail?categId=F010407",
+"http://localhost:8080/BPI/categ4Index/toVerticCmpDetail?categId=F010411",
+"http://localhost:8080/BPI/categ4Index/toVerticCmpDetail?categId=F010413",
+"http://localhost:8080/BPI/categ4Index/toVerticCmpDetail?categId=F010415",
+"http://localhost:8080/BPI/categ4Index/toVerticCmpDetail?categId=F010416",
+"http://localhost:8080/BPI/categ4Index/toVerticCmpDetail?categId=F010422",
+"http://localhost:8080/BPI/categ4Index/toVerticCmpDetail?categId=F010427",
+"http://localhost:8080/BPI/categ4Index/toVerticCmpDetail?categId=F010433",
+"http://localhost:8080/BPI/categ4Index/toVerticCmpDetail?categId=F010430",
+"http://localhost:8080/BPI/categ4Index/toVerticCmpDetail?categId=F010601",
+"http://localhost:8080/BPI/categ4Index/toVerticCmpDetail?categId=F010603",
+"http://localhost:8080/BPI/categ4Index/toVerticCmpDetail?categId=F010602",
+"http://localhost:8080/BPI/categ4Index/toVerticCmpDetail?categId=F010605"]
+TracePrint(name1[0])
+// TracePrint(i+1&"-"&name1[i]&"-"&text[0])
+
+// TracePrint(i+1&"-"&"大类-"&name2[i]&"-"&text[0])
+
+// TracePrint(i+1&"-"&"小类-"&name3[i]&"-"&text[0])
+
+
+dTime = Time.Date()
+iRet = Time.Month(dTime)-1
+times = iRet&"月"
+Dim path="F:\\图片&pdf存放地址\\"&times&"\\png"
+Dim path0="F:\\图片&pdf存放地址\\"&times&"\\pdf"
+Dim path1=path&"\\总类"
+Dim path2=path&"\\大类"
+Dim path3=path&"\\小类"
+Dim path4=path0&"\\总类"
+Dim path5=path0&"\\大类"
+Dim path6=path0&"\\小类"
+// For Each value In web1
+// 	#icon("@res:etp5ecf2-uptl-mt0c-oc81-vnv3mt7ph3sr.png")
+// 	iRet = WebBrowser.GoURL(hWeb,value,True,{"wnd":[{"cls":"Chrome_WidgetWin_1","title":"*","app":"chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window"}],"html":[{"tag":"BODY"}]},30000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200})
+// 	#icon("@res:3icd5021-ibl2-to1b-jtoq-lb1c8j6id838.png")
+
+// 	#icon("@res:84t04f9q-bdcn-oli9-f6e3-vd0vikssrij8.png")
+// 	Mouse.Action({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"*","app":"chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window"}],"html":[{"tag":"path","css-selector":"body>div>div>div>div>svg>g>path","idx":19}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
+// 	#icon("@res:5koi4g65-vnqt-vbnc-qtos-qtoh9r8ps2cr.png")
+// 	Mouse.Action({"wnd":[{"app":"chrome","cls":"Chrome_WidgetWin_1","title":"指数变化趋势 - Google Chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window","aaname":"指数变化趋势"}],"ctrl":[{"role":"ROLE_SYSTEM_DOCUMENT","name":"指数变化趋势"},{"role":"ROLE_SYSTEM_GROUPING","idx":49}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
+// 	Delay(5000)
+
+// 	If i=0
+
+// 		#icon("@res:eq5c58v8-7ml2-6ali-81tk-bvarblgik9a1.png")
+// 		Mouse.Action({"wnd":[{"app":"chrome","cls":"#32770","title":"另存为"},{"cls":"WorkerW"},{"cls":"ReBarWindow32"},{"cls":"Address Band Root"},{"cls":"msctls_progress32"},{"cls":"Breadcrumb Parent"},{"cls":"ToolbarWindow32","title":"地址: *","ctrlid":1001,"aaname":"地址: *"}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
+// 		#icon("@res:q7eb1u07-h9t4-g0u8-kg4l-8pbif2k8ace7.png")
+// 		Keyboard.InputText({"wnd":[{"app":"chrome","cls":"#32770","title":"另存为"},{"cls":"WorkerW"},{"cls":"ReBarWindow32"},{"cls":"Address Band Root"},{"cls":"msctls_progress32"},{"cls":"ComboBoxEx32"},{"cls":"ComboBox","aaname":"地址"},{"cls":"Edit","aaname":"地址"}]},path1,True,20,10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":500,"bSetForeground":True,"sSimulate":"message","bValidate":False,"bClickBeforeInput":False})
+// 		Keyboard.Press("Enter", "press", [],{"iDelayAfter":300,"iDelayBefore":200,"sSimulate":"simulate"})
+
+
+// 	Else
+
+// 	End If
+// 	#icon("@res:0bnk47m6-49e0-m7mk-rpo8-mt5gosg8pgtp.png")
+// 	Mouse.Action({"wnd":[{"app":"chrome","cls":"#32770","title":"另存为"},{"cls":"DUIViewWndClassName"},{"cls":"DirectUIHWND","aaname":"浏览器窗格"},{"cls":"FloatNotifySink"},{"cls":"ComboBox","aaname":"文件名:"},{"cls":"Edit","ctrlid":1001,"aaname":"文件名:"}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
+// 	#icon("@res:8ig4g5ul-r86e-7mls-jsto-ghcdn9h5n2t5.png")
+// 	Keyboard.InputText({"wnd":[{"app":"chrome","cls":"#32770","title":"另存为"},{"cls":"DUIViewWndClassName"},{"cls":"DirectUIHWND","aaname":"浏览器窗格"},{"cls":"FloatNotifySink"},{"cls":"ComboBox","aaname":"文件名:"},{"cls":"Edit","ctrlid":1001,"aaname":"文件名:"}]},i+1&"-"&name1[i]&"-"&text[0],True,20,10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":500,"bSetForeground":True,"sSimulate":"message","bValidate":False,"bClickBeforeInput":False})
+
+// 	Keyboard.Press("Enter", "press", [],{"iDelayAfter":300,"iDelayBefore":200,"sSimulate":"simulate"})
+
+
+// 	#icon("@res:pkjainqe-qt6c-g4m3-q77b-nvve16ej1248.png")
+// 	Mouse.Action({"wnd":[{"app":"chrome","cls":"Chrome_WidgetWin_1","title":"指数变化趋势 - Google Chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window","aaname":"指数变化趋势"}],"ctrl":[{"role":"ROLE_SYSTEM_DOCUMENT","name":"指数变化趋势"},{"role":"ROLE_SYSTEM_GROUPING","name":"Chart context menu","idx":1}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
+// 	#icon("@res:d0j4bt8t-vorr-e32b-29vo-cjnicuu457k5.png")
+// 	Mouse.Action({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"*","app":"chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window"}],"html":[{"tag":"DIV","parentid":"highcharts-*-1*","aaname":"Download PNG image"}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
+// 	Delay(5000)
+// 	#icon("@res:7422sq7i-68ar-qng6-4av4-tnvptgrqq7d7.png")
+// 	Keyboard.InputText({"wnd":[{"app":"chrome","cls":"#32770","title":"另存为"},{"cls":"DUIViewWndClassName"},{"cls":"DirectUIHWND","aaname":"浏览器窗格"},{"cls":"FloatNotifySink"},{"cls":"ComboBox","aaname":"文件名:"},{"cls":"Edit","ctrlid":1001,"aaname":"文件名:"}]},i+1&"-"&name1[i]&"-"&text[1],True,20,10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":500,"bSetForeground":True,"sSimulate":"message","bValidate":False,"bClickBeforeInput":False})
+
+// 	Keyboard.Press("Enter", "press", [],{"iDelayAfter":300,"iDelayBefore":200,"sSimulate":"simulate"})
+// 	#icon("@res:4q4o4sf8-lip1-hgnt-mbst-t7qiscpqm09m.png")
+// 	Mouse.Action({"wnd":[{"app":"chrome","cls":"Chrome_WidgetWin_1","title":"指数变化趋势 - Google Chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window","aaname":"指数变化趋势"}],"ctrl":[{"role":"ROLE_SYSTEM_DOCUMENT","name":"指数变化趋势"},{"role":"ROLE_SYSTEM_GROUPING","name":"Chart context menu","idx":2}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
+// 	#icon("@res:tbvoo7qq-cei0-et3c-b4an-iu843l25letq.png")
+// 	Mouse.Action({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"*","app":"chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window"}],"html":[{"tag":"DIV","parentid":"highcharts-*2*","aaname":"Download PNG image"}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
+// 	Delay(5000)
+// 	#icon("@res:5je5qjo4-oebl-1rsq-9psn-siphmineib5f.png")
+// 	Keyboard.InputText({"wnd":[{"app":"chrome","cls":"#32770","title":"另存为"},{"cls":"DUIViewWndClassName"},{"cls":"DirectUIHWND","aaname":"浏览器窗格"},{"cls":"FloatNotifySink"},{"cls":"ComboBox","aaname":"文件名:"},{"cls":"Edit","ctrlid":1001,"aaname":"文件名:"}]},i+1&"-"&name1[i]&"-"&text[2],True,20,10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":500,"bSetForeground":True,"sSimulate":"message","bValidate":False,"bClickBeforeInput":False})
+
+// 	Keyboard.Press("Enter", "press", [],{"iDelayAfter":300,"iDelayBefore":200,"sSimulate":"simulate"})
+// 	i=i+1
+// Next
+
+i=0
+For Each value In web2
+	#icon("@res:default.png")
+	iRet = WebBrowser.GoURL(hWeb,value,True,{},30000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200})
+	#icon("@res:473dfb7f-89f8-btav-6jkq-qta7751dgkal.png")
+	
+	#icon("@res:84t04f9q-bdcn-oli9-f6e3-vd0vikssrij8.png")
+	Mouse.Action({"wnd":[{"app":"chrome","cls":"Chrome_WidgetWin_1","title":"指数变化趋势 - Google Chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window","aaname":"指数变化趋势"}],"ctrl":[{"role":"ROLE_SYSTEM_DOCUMENT","name":"指数变化趋势"},{"role":"ROLE_SYSTEM_GROUPING","name":"Chart context menu"}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
+	#icon("@res:fu1rngq3-acfu-tjqk-i665-811tlr12i2lf.png")
+	Mouse.Action({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"*","app":"chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window"}],"html":[{"tag":"DIV","parentid":"highcharts-*0","aaname":"Download PNG image"}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
+	Delay(5000)
+	If i=0
+		
+		#icon("@res:o4t2u1bf-iiiv-87ke-jr9e-sqgfh1t1seml.png")
+		Mouse.Action({"wnd":[{"app":"chrome","cls":"#32770","title":"另存为"},{"cls":"WorkerW"},{"cls":"ReBarWindow32"},{"cls":"Address Band Root"},{"cls":"msctls_progress32"},{"cls":"Breadcrumb Parent"},{"cls":"ToolbarWindow32","title":"地址: F:\\图片&pdf存放地址\\9月\\png\\大类","ctrlid":1001,"aaname":"地址: F:\\图片pdf存放地址\\9月\\png\\大类"}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
+		#icon("@res:5qmm5ms5-7c7s-q6bj-0o0h-e8hgelaglua3.png")
+		Keyboard.InputText({"wnd":[{"app":"chrome","cls":"#32770","title":"另存为"},{"cls":"WorkerW"},{"cls":"ReBarWindow32"},{"cls":"Address Band Root"},{"cls":"msctls_progress32"},{"cls":"ComboBoxEx32"},{"cls":"ComboBox","aaname":"地址"},{"cls":"Edit","aaname":"地址"}]},path2,True,20,10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":500,"bSetForeground":True,"sSimulate":"message","bValidate":False,"bClickBeforeInput":False})
+		Keyboard.Press("Enter", "press", [],{"iDelayAfter":300,"iDelayBefore":200,"sSimulate":"simulate"})
+	Else
+		
+	End If
+	#icon("@res:kacfafu6-og1j-d8hc-e2ts-r980nh56029i.png")
+	Mouse.Action({"wnd":[{"app":"chrome","cls":"#32770","title":"另存为"},{"cls":"DUIViewWndClassName"},{"cls":"DirectUIHWND","aaname":"浏览器窗格"},{"cls":"FloatNotifySink"},{"cls":"ComboBox","aaname":"文件名:"},{"cls":"Edit","ctrlid":1001,"aaname":"文件名:"}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
+	#icon("@res:6fdbo9om-f4sp-aaqr-h0il-108u1gp93lhv.png")
+	Keyboard.InputText({"wnd":[{"app":"chrome","cls":"#32770","title":"另存为"},{"cls":"DUIViewWndClassName"},{"cls":"DirectUIHWND","aaname":"浏览器窗格"},{"cls":"FloatNotifySink","idx":2},{"cls":"ComboBox","aaname":"文件名:"},{"cls":"Edit","ctrlid":1001,"aaname":"文件名:"}]},i+1&"-"&name2[i]&"-"&text[0],True,20,10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":500,"bSetForeground":True,"sSimulate":"message","bValidate":False,"bClickBeforeInput":False})
+	
+	Keyboard.Press("Enter", "press", [],{"iDelayAfter":300,"iDelayBefore":200,"sSimulate":"simulate"})
+	#icon("@res:pkjainqe-qt6c-g4m3-q77b-nvve16ej1248.png")
+	Mouse.Action({"wnd":[{"app":"chrome","cls":"Chrome_WidgetWin_1","title":"指数变化趋势 - Google Chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window","aaname":"指数变化趋势"}],"ctrl":[{"role":"ROLE_SYSTEM_DOCUMENT","name":"指数变化趋势"},{"role":"ROLE_SYSTEM_GROUPING","name":"Chart context menu","idx":1}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
+	#icon("@res:7ja1rmjo-02pv-4a76-0h9s-5rqj2ljq1tvl.png")
+	Mouse.Action({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"*","app":"chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window"}],"html":[{"tag":"DIV","parentid":"highcharts-*-1*","aaname":"Download PNG image"}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
+	Delay(5000)
+	#icon("@res:bh290oms-sd61-06mg-jcoi-i3ged0apsjvj.png")
+	Keyboard.InputText({"wnd":[{"app":"chrome","cls":"#32770","title":"另存为"},{"cls":"DUIViewWndClassName"},{"cls":"DirectUIHWND","aaname":"浏览器窗格"},{"cls":"FloatNotifySink"},{"cls":"ComboBox","aaname":"文件名:"},{"cls":"Edit","ctrlid":1001,"aaname":"文件名:"}]},i+1&"-"&name2[i]&"-"&text[1],True,20,10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":500,"bSetForeground":True,"sSimulate":"message","bValidate":False,"bClickBeforeInput":False})
+	
+	Keyboard.Press("Enter", "press", [],{"iDelayAfter":300,"iDelayBefore":200,"sSimulate":"simulate"})
+	#icon("@res:4q4o4sf8-lip1-hgnt-mbst-t7qiscpqm09m.png")
+	Mouse.Action({"wnd":[{"app":"chrome","cls":"Chrome_WidgetWin_1","title":"指数变化趋势 - Google Chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window","aaname":"指数变化趋势"}],"ctrl":[{"role":"ROLE_SYSTEM_DOCUMENT","name":"指数变化趋势"},{"role":"ROLE_SYSTEM_GROUPING","name":"Chart context menu","idx":2}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
+	#icon("@res:d3vghaed-1h76-bt5o-bp71-obi9ae2cqji7.png")
+	Mouse.Action({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"*","app":"chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window"}],"html":[{"tag":"DIV","parentid":"highcharts-*-2*","aaname":"Download PNG image"}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
+	Delay(5000)
+	#icon("@res:kgb2hqfb-43l2-agqk-pat2-866ltd03j3i1.png")
+	Keyboard.InputText({"wnd":[{"app":"chrome","cls":"#32770","title":"另存为"},{"cls":"DUIViewWndClassName"},{"cls":"DirectUIHWND","aaname":"浏览器窗格"},{"cls":"FloatNotifySink"},{"cls":"ComboBox","aaname":"文件名:"},{"cls":"Edit","ctrlid":1001,"aaname":"文件名:"}]},i+1&"-"&name2[i]&"-"&text[2],True,20,10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":500,"bSetForeground":True,"sSimulate":"message","bValidate":False,"bClickBeforeInput":False})
+	
+	Keyboard.Press("Enter", "press", [],{"iDelayAfter":300,"iDelayBefore":200,"sSimulate":"simulate"})
+	
+	i=i+1
+Next
+
+i=0
+
+For Each value In web3
+	#icon("@res:default.png")
+	iRet = WebBrowser.GoURL(hWeb,value,True,{},30000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200})
+	#icon("@res:473dfb7f-89f8-btav-6jkq-qta7751dgkal.png")
+	
+	#icon("@res:84t04f9q-bdcn-oli9-f6e3-vd0vikssrij8.png")
+	Mouse.Action({"wnd":[{"app":"chrome","cls":"Chrome_WidgetWin_1","title":"指数变化趋势 - Google Chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window","aaname":"指数变化趋势"}],"ctrl":[{"role":"ROLE_SYSTEM_DOCUMENT","name":"指数变化趋势"},{"role":"ROLE_SYSTEM_GROUPING","name":"Chart context menu"}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
+	#icon("@res:kokdb9d2-48ou-sbi9-a492-2fdk0ok7gf9j.png")
+	Mouse.Action({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"*","app":"chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window"}],"html":[{"tag":"DIV","parentid":"highcharts-*-0","aaname":"Download PNG image"}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
+	Delay(5000)
+	If i=0
+		
+		#icon("@res:a190ngpa-hl4g-il2h-f5b1-eadq8u3v9100.png")
+		Mouse.Action({"wnd":[{"app":"chrome","cls":"#32770","title":"另存为"},{"cls":"WorkerW"},{"cls":"ReBarWindow32"},{"cls":"Address Band Root"},{"cls":"msctls_progress32"},{"cls":"Breadcrumb Parent"},{"cls":"ToolbarWindow32","title":"地址: *","ctrlid":1001,"aaname":"地址: *"}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
+		#icon("@res:q7eb1u07-h9t4-g0u8-kg4l-8pbif2k8ace7.png")
+		Keyboard.InputText({"wnd":[{"app":"chrome","cls":"#32770","title":"另存为"},{"cls":"WorkerW"},{"cls":"ReBarWindow32"},{"cls":"Address Band Root"},{"cls":"msctls_progress32"},{"cls":"ComboBoxEx32"},{"cls":"ComboBox","aaname":"地址"},{"cls":"Edit","aaname":"地址"}]},path3,True,20,10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":500,"bSetForeground":True,"sSimulate":"message","bValidate":False,"bClickBeforeInput":False})
+		Keyboard.Press("Enter", "press", [],{"iDelayAfter":300,"iDelayBefore":200,"sSimulate":"simulate"})
+	Else
+		
+	End If
+	
+	#icon("@res:tu0cf07o-in8n-3lqj-h85u-ttfen3o9b5aq.png")
+	Mouse.Action({"wnd":[{"app":"chrome","cls":"#32770","title":"另存为"},{"cls":"DUIViewWndClassName"},{"cls":"DirectUIHWND","aaname":"浏览器窗格"},{"cls":"FloatNotifySink"},{"cls":"ComboBox","aaname":"文件名:"}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
+	#icon("@res:nhbsbahv-d5iv-p1nk-v14l-tdtk084v9t9m.png")
+	Keyboard.InputText({"wnd":[{"app":"chrome","cls":"#32770","title":"另存为"},{"cls":"DUIViewWndClassName"},{"cls":"DirectUIHWND","aaname":"浏览器窗格"},{"cls":"FloatNotifySink"},{"cls":"ComboBox","aaname":"文件名:"},{"cls":"Edit","ctrlid":1001,"aaname":"文件名:"}]},i+1&"-"&name3[i]&"-"&text[0],True,20,10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":500,"bSetForeground":True,"sSimulate":"message","bValidate":False,"bClickBeforeInput":False})
+	
+	Keyboard.Press("Enter", "press", [],{"iDelayAfter":300,"iDelayBefore":200,"sSimulate":"simulate"})
+	#icon("@res:pkjainqe-qt6c-g4m3-q77b-nvve16ej1248.png")
+	Mouse.Action({"wnd":[{"app":"chrome","cls":"Chrome_WidgetWin_1","title":"指数变化趋势 - Google Chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window","aaname":"指数变化趋势"}],"ctrl":[{"role":"ROLE_SYSTEM_DOCUMENT","name":"指数变化趋势"},{"role":"ROLE_SYSTEM_GROUPING","name":"Chart context menu","idx":1}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
+	#icon("@res:vhjep2er-3g3d-acc2-rgj0-klb9husukf0e.png")
+	Mouse.Action({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"*","app":"chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window"}],"html":[{"tag":"DIV","parentid":"highcharts-*-1*","aaname":"Download PNG image"}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
+	Delay(5000)
+	#icon("@res:057qbgrr-sibg-b59r-ip2b-i30c3aai9hq6.png")
+	Keyboard.InputText({"wnd":[{"app":"chrome","cls":"#32770","title":"另存为"},{"cls":"DUIViewWndClassName"},{"cls":"DirectUIHWND","aaname":"浏览器窗格"},{"cls":"FloatNotifySink"},{"cls":"ComboBox","aaname":"文件名:"},{"cls":"Edit","ctrlid":1001,"aaname":"文件名:"}]},i+1&"-"&name3[i]&"-"&text[1],True,20,10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":500,"bSetForeground":True,"sSimulate":"message","bValidate":False,"bClickBeforeInput":False})
+	
+	Keyboard.Press("Enter", "press", [],{"iDelayAfter":300,"iDelayBefore":200,"sSimulate":"simulate"})
+	#icon("@res:4q4o4sf8-lip1-hgnt-mbst-t7qiscpqm09m.png")
+	Mouse.Action({"wnd":[{"app":"chrome","cls":"Chrome_WidgetWin_1","title":"指数变化趋势 - Google Chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window","aaname":"指数变化趋势"}],"ctrl":[{"role":"ROLE_SYSTEM_DOCUMENT","name":"指数变化趋势"},{"role":"ROLE_SYSTEM_GROUPING","name":"Chart context menu","idx":2}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
+	#icon("@res:s9sbbtan-3dlo-dj5h-mpk1-uv0l02h9eaal.png")
+	Mouse.Action({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"*","app":"chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window"}],"html":[{"tag":"DIV","parentid":"highcharts-*-2*","aaname":"Download PNG image"}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
+	Delay(5000)
+	#icon("@res:q51aolml-aljd-8kbl-1952-s2s3m6cjlbkl.png")
+	Keyboard.InputText({"wnd":[{"app":"chrome","cls":"#32770","title":"另存为"},{"cls":"DUIViewWndClassName"},{"cls":"DirectUIHWND","aaname":"浏览器窗格"},{"cls":"FloatNotifySink"},{"cls":"ComboBox","aaname":"文件名:"},{"cls":"Edit","ctrlid":1001,"aaname":"文件名:"}]},i+1&"-"&name3[i]&"-"&text[2],True,20,10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":500,"bSetForeground":True,"sSimulate":"message","bValidate":False,"bClickBeforeInput":False})
+	
+	Keyboard.Press("Enter", "press", [],{"iDelayAfter":300,"iDelayBefore":200,"sSimulate":"simulate"})
+	i=i+1
+Next
+
+
