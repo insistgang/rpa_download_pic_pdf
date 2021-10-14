@@ -7,7 +7,7 @@ Dim hWeb=''
 hWeb = WebBrowser.Create("chrome","www.baidu.com",30000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200,"sBrowserPath":"","sStartArgs":""})
 hWeb = WebBrowser.BindBrowser("chrome",10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200})
 #icon("@res:ps10v3d0-btbt-l6lq-mk19-nmumnh9frl6j.png")
-Window.Show({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"百度一下，你就知道 - Google Chrome","app":"chrome"}]},"show")
+Window.Show({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"百度一下，你就知道 - Google Chrome","app":"chrome"}]},"max")
 dTime = Time.Date()
 iRet = Time.Month(dTime)-1
 times = iRet&"月"
@@ -38,18 +38,18 @@ For Each value In web2
 	Delay(5000)
 	If i=0
 		
-		#icon("@res:o4t2u1bf-iiiv-87ke-jr9e-sqgfh1t1seml.png")
-		Mouse.Action({"wnd":[{"app":"chrome","cls":"#32770","title":"另存为"},{"cls":"WorkerW"},{"cls":"ReBarWindow32"},{"cls":"Address Band Root"},{"cls":"msctls_progress32"},{"cls":"Breadcrumb Parent"},{"cls":"ToolbarWindow32","title":"地址: F:\\图片&pdf存放地址\\9月\\png\\大类","ctrlid":1001,"aaname":"地址: F:\\图片pdf存放地址\\9月\\png\\大类"}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
-		#icon("@res:5qmm5ms5-7c7s-q6bj-0o0h-e8hgelaglua3.png")
+		#icon("@res:20dr288q-ngo7-tamm-5l5p-0r901ugmt7pi.png")
+		Mouse.Action({"wnd":[{"app":"chrome","cls":"#32770","title":"另存为"},{"cls":"WorkerW"},{"cls":"ReBarWindow32"},{"cls":"Address Band Root"},{"cls":"msctls_progress32"},{"cls":"Breadcrumb Parent"},{"cls":"ToolbarWindow32","title":"地址: F:\\图片&pdf存放地址\\9月\\png\\总类","ctrlid":1001,"aaname":"地址: F:\\图片pdf存放地址\\9月\\png\\总类"}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
+		#icon("@res:bg0e3047-6gra-4epp-jq1s-j3975kfssbt3.png")
 		Keyboard.InputText({"wnd":[{"app":"chrome","cls":"#32770","title":"另存为"},{"cls":"WorkerW"},{"cls":"ReBarWindow32"},{"cls":"Address Band Root"},{"cls":"msctls_progress32"},{"cls":"ComboBoxEx32"},{"cls":"ComboBox","aaname":"地址"},{"cls":"Edit","aaname":"地址"}]},path2,True,20,10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":500,"bSetForeground":True,"sSimulate":"message","bValidate":False,"bClickBeforeInput":False})
 		Keyboard.Press("Enter", "press", [],{"iDelayAfter":300,"iDelayBefore":200,"sSimulate":"simulate"})
 	Else
 		
 	End If
-	#icon("@res:kacfafu6-og1j-d8hc-e2ts-r980nh56029i.png")
+	#icon("@res:kqbcr8dd-9gpv-f8pd-7g4v-gsg58b9n9o4p.png")
 	Mouse.Action({"wnd":[{"app":"chrome","cls":"#32770","title":"另存为"},{"cls":"DUIViewWndClassName"},{"cls":"DirectUIHWND","aaname":"浏览器窗格"},{"cls":"FloatNotifySink"},{"cls":"ComboBox","aaname":"文件名:"},{"cls":"Edit","ctrlid":1001,"aaname":"文件名:"}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
-	#icon("@res:6fdbo9om-f4sp-aaqr-h0il-108u1gp93lhv.png")
-	Keyboard.InputText({"wnd":[{"app":"chrome","cls":"#32770","title":"另存为"},{"cls":"DUIViewWndClassName"},{"cls":"DirectUIHWND","aaname":"浏览器窗格"},{"cls":"FloatNotifySink","idx":2},{"cls":"ComboBox","aaname":"文件名:"},{"cls":"Edit","ctrlid":1001,"aaname":"文件名:"}]},i+1&"-"&name2[i]&"-"&text[0],True,20,10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":500,"bSetForeground":True,"sSimulate":"message","bValidate":False,"bClickBeforeInput":False})
+	#icon("@res:ocljvtar-qjkn-9ao9-h2em-iq1177ofuspb.png")
+	Keyboard.InputText({"wnd":[{"app":"chrome","cls":"#32770","title":"另存为"},{"cls":"DUIViewWndClassName"},{"cls":"DirectUIHWND","aaname":"浏览器窗格"},{"cls":"FloatNotifySink"},{"cls":"ComboBox","aaname":"文件名:"},{"cls":"Edit","ctrlid":1001,"aaname":"文件名:"}]},i+1&"-"&name2[i]&"-"&text[0],True,20,10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":500,"bSetForeground":True,"sSimulate":"message","bValidate":False,"bClickBeforeInput":False})
 	
 	Keyboard.Press("Enter", "press", [],{"iDelayAfter":300,"iDelayBefore":200,"sSimulate":"simulate"})
 	#icon("@res:pkjainqe-qt6c-g4m3-q77b-nvve16ej1248.png")

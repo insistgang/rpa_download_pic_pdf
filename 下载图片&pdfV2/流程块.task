@@ -7,7 +7,7 @@ Dim i=0
 hWeb = WebBrowser.Create("chrome","www.baidu.com",30000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200,"sBrowserPath":"","sStartArgs":""})
 hWeb = WebBrowser.BindBrowser("chrome",10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200})
 #icon("@res:ps10v3d0-btbt-l6lq-mk19-nmumnh9frl6j.png")
-Window.Show({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"百度一下，你就知道 - Google Chrome","app":"chrome"}]},"show")
+Window.Show({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"百度一下，你就知道 - Google Chrome","app":"chrome"}]},"max")
 dTime = Time.Date()
 iRet = Time.Month(dTime)-1
 times = iRet&"月"
@@ -20,8 +20,7 @@ Dim web2=["http://localhost:8080/BPI/categ3Index/toVerticCmpDetail?categId=F0101
 "http://localhost:8080/BPI/categ3Index/toVerticCmpDetail?categId=F0104",
 "http://localhost:8080/BPI/categ3Index/toVerticCmpDetail?categId=F0105",
 "http://localhost:8080/BPI/categ3Index/toVerticCmpDetail?categId=F0106"]
-
-TracePrint(name1[0])
+Dim text=["月定基","周环比","同比"]
 
 i=0
 For Each value In web2
@@ -72,4 +71,5 @@ Next
 
 #icon("@res:i81otmil-4g11-22re-sp51-ic8md30n7b77.png")
 Window.Close({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"* - Google Chrome","app":"chrome"}]})
+
 

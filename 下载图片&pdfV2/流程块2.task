@@ -12,8 +12,8 @@ Dim path="F:\\图片&pdf存放地址\\"&times&"\\png"
 Dim path1=path&"\\总类"
 hWeb = WebBrowser.Create("chrome","www.baidu.com",30000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200,"sBrowserPath":"","sStartArgs":""})
 hWeb = WebBrowser.BindBrowser("chrome",10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200})
-#icon("@res:ps10v3d0-btbt-l6lq-mk19-nmumnh9frl6j.png")
-Window.Show({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"百度一下，你就知道 - Google Chrome","app":"chrome"}]},"show")
+#icon("@res:9496ng2j-hasf-3ugp-4ndc-nkpclae9si6h.png")
+Window.Show({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"百度一下，你就知道 - Google Chrome","app":"chrome"}]},"max")
 Dim name1=["总类"]
 Dim text=["月定基","周环比","同比"]
 Dim web1=["http://localhost:8080/BPI/categ1Index/toVerticCmpDetail?categId=F"]
@@ -41,9 +41,10 @@ For Each value In web1
 	Else
 		
 	End If
-	#icon("@res:0bnk47m6-49e0-m7mk-rpo8-mt5gosg8pgtp.png")
-	Mouse.Action({"wnd":[{"app":"chrome","cls":"#32770","title":"另存为"},{"cls":"DUIViewWndClassName"},{"cls":"DirectUIHWND","aaname":"浏览器窗格"},{"cls":"FloatNotifySink"},{"cls":"ComboBox","aaname":"文件名:"},{"cls":"Edit","ctrlid":1001,"aaname":"文件名:"}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
-	#icon("@res:8ig4g5ul-r86e-7mls-jsto-ghcdn9h5n2t5.png")
+	#icon("@res:b8qsljfk-2kkr-m8f4-fokm-264ol0rg9k8i.png")
+	Mouse.Hover({"wnd":[{"app":"chrome","cls":"#32770","title":"另存为"},{"cls":"DUIViewWndClassName"},{"cls":"DirectUIHWND","aaname":"浏览器窗格"},{"cls":"FloatNotifySink"},{"cls":"ComboBox","aaname":"文件名:"},{"cls":"Edit","ctrlid":1001,"aaname":"文件名:"}]},10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
+	Mouse.Click("left", "click", [],{"iDelayAfter":300,"iDelayBefore":200})
+	#icon("@res:tdh7q5dk-bo6b-loif-nc36-n9nig0o6arsn.png")
 	Keyboard.InputText({"wnd":[{"app":"chrome","cls":"#32770","title":"另存为"},{"cls":"DUIViewWndClassName"},{"cls":"DirectUIHWND","aaname":"浏览器窗格"},{"cls":"FloatNotifySink"},{"cls":"ComboBox","aaname":"文件名:"},{"cls":"Edit","ctrlid":1001,"aaname":"文件名:"}]},i+1&"-"&name1[i]&"-"&text[0],True,20,10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":500,"bSetForeground":True,"sSimulate":"message","bValidate":False,"bClickBeforeInput":False})
 	
 	Keyboard.Press("Enter", "press", [],{"iDelayAfter":300,"iDelayBefore":200,"sSimulate":"simulate"})

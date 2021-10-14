@@ -4,7 +4,11 @@ Dim times = ""
 
 Dim i=0
 Dim hWeb=''
-
+dTime = Time.Date()
+iRet = Time.Month(dTime)-1
+times = iRet&"月"
+Dim path0="F:\\图片&pdf存放地址\\"&times&"\\pdf"
+Dim path6=path0&"\\小类"
 hWeb = WebBrowser.Create("chrome","www.baidu.com",30000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200,"sBrowserPath":"","sStartArgs":""})
 hWeb = WebBrowser.BindBrowser("chrome",10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200})
 #icon("@res:ps10v3d0-btbt-l6lq-mk19-nmumnh9frl6j.png")
@@ -32,6 +36,8 @@ Dim web3=["http://localhost:8080/BPI/categ4Index/toVerticCmpDetail?categId=F0102
 "http://localhost:8080/BPI/categ4Index/toVerticCmpDetail?categId=F010603",
 "http://localhost:8080/BPI/categ4Index/toVerticCmpDetail?categId=F010602",
 "http://localhost:8080/BPI/categ4Index/toVerticCmpDetail?categId=F010605"]
+
+
 i=0
 For Each value In web3
 	#icon("@res:default.png")

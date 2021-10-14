@@ -7,7 +7,7 @@ Dim hWeb=''
 hWeb = WebBrowser.Create("chrome","www.baidu.com",30000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200,"sBrowserPath":"","sStartArgs":""})
 hWeb = WebBrowser.BindBrowser("chrome",10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200})
 #icon("@res:ps10v3d0-btbt-l6lq-mk19-nmumnh9frl6j.png")
-Window.Show({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"百度一下，你就知道 - Google Chrome","app":"chrome"}]},"show")
+Window.Show({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"百度一下，你就知道 - Google Chrome","app":"chrome"}]},"max")
 dTime = Time.Date()
 iRet = Time.Month(dTime)-1
 times = iRet&"月"
@@ -35,7 +35,7 @@ Dim web3=["http://localhost:8080/BPI/categ4Index/toVerticCmpDetail?categId=F0102
 "http://localhost:8080/BPI/categ4Index/toVerticCmpDetail?categId=F010603",
 "http://localhost:8080/BPI/categ4Index/toVerticCmpDetail?categId=F010602",
 "http://localhost:8080/BPI/categ4Index/toVerticCmpDetail?categId=F010605"]
-
+Dim text=["月定基","周环比","同比"]
 i=0
 
 For Each value In web3
@@ -59,9 +59,10 @@ For Each value In web3
 		
 	End If
 	
-	#icon("@res:tu0cf07o-in8n-3lqj-h85u-ttfen3o9b5aq.png")
-	Mouse.Action({"wnd":[{"app":"chrome","cls":"#32770","title":"另存为"},{"cls":"DUIViewWndClassName"},{"cls":"DirectUIHWND","aaname":"浏览器窗格"},{"cls":"FloatNotifySink"},{"cls":"ComboBox","aaname":"文件名:"}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
-	#icon("@res:nhbsbahv-d5iv-p1nk-v14l-tdtk084v9t9m.png")
+	#icon("@res:sqi69bj2-ab3m-c9ga-r69v-cksrnkl6b12s.png")
+	Mouse.Hover({"wnd":[{"app":"chrome","cls":"#32770","title":"另存为"},{"cls":"DUIViewWndClassName"},{"cls":"DirectUIHWND","aaname":"浏览器窗格"},{"cls":"FloatNotifySink"},{"cls":"ComboBox","aaname":"文件名:"},{"cls":"Edit","ctrlid":1001,"aaname":"文件名:"}]},10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
+	Mouse.Click("left", "click", [],{"iDelayAfter":300,"iDelayBefore":200})
+	#icon("@res:mt1sckjv-8udp-tvoc-kktg-ma0qmfbi5tue.png")
 	Keyboard.InputText({"wnd":[{"app":"chrome","cls":"#32770","title":"另存为"},{"cls":"DUIViewWndClassName"},{"cls":"DirectUIHWND","aaname":"浏览器窗格"},{"cls":"FloatNotifySink"},{"cls":"ComboBox","aaname":"文件名:"},{"cls":"Edit","ctrlid":1001,"aaname":"文件名:"}]},i+1&"-"&name3[i]&"-"&text[0],True,20,10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":500,"bSetForeground":True,"sSimulate":"message","bValidate":False,"bClickBeforeInput":False})
 	
 	Keyboard.Press("Enter", "press", [],{"iDelayAfter":300,"iDelayBefore":200,"sSimulate":"simulate"})
@@ -87,4 +88,5 @@ For Each value In web3
 Next
 #icon("@res:i81otmil-4g11-22re-sp51-ic8md30n7b77.png")
 Window.Close({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"* - Google Chrome","app":"chrome"}]})
+
 
